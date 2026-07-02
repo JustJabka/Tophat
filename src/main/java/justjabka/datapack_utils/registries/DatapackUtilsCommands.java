@@ -21,6 +21,10 @@ public class DatapackUtilsCommands {
             dispatcher.register(GuiCommand.register(registryAccess));
             dispatcher.register(EvalCommand.register());
             dispatcher.register(HealCommand.register());
+            dispatcher.register(IgniteCommand.register());
+            dispatcher.register(FreezeCommand.register());
+            dispatcher.register(AirCommand.register());
+            dispatcher.register(FoodCommand.register());
 
             if (executeNode instanceof LiteralCommandNode<CommandSourceStack> vanillaExecute) {
                 LiteralCommandNode<CommandSourceStack> raycastNode = ExecuteRaycastCommand.register(vanillaExecute);

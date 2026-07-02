@@ -4,6 +4,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import justjabka.datapack_utils.Types.Operation;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -13,11 +14,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 
 public class MotionCommand {
-    private enum MotionOperation {
-        ADD,
-        SET
-    }
-
     public static LiteralArgumentBuilder<CommandSourceStack> register() {
         return Commands.literal("motion")
                 .requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
@@ -25,24 +21,24 @@ public class MotionCommand {
                         .then(Commands.argument("target", EntityArgument.entity())
                                 .then(Commands.argument("momentum", Vec3Argument.vec3(false))
                                         .executes(context ->
-                                                applyMomentum(context, MotionOperation.ADD))
+                                                applyMomentum(context, Operation.ADD))
                                 )
                 ))
                 .then(Commands.literal("set")
                                 .then(Commands.argument("target", EntityArgument.entity())
                                         .then(Commands.argument("momentum", Vec3Argument.vec3(false))
                                                 .executes(context ->
-                                                        applyMomentum(context, MotionOperation.SET))
+                                                        applyMomentum(context, Operation.SET))
                                         )
                 ));
     }
 
-    private static int applyMomentum(CommandContext<CommandSourceStack> context, MotionOperation operation) throws CommandSyntaxException {
+    private static int applyMomentum(CommandContext<CommandSourceStack> context, Operation operation) throws CommandSyntaxException {
         Entity entity = EntityArgument.getEntity(context, "target");
         Vec3 momentum = getMomentum(context);
 
         switch (operation) {
-            case MotionOperation.ADD -> entity.addDeltaMovement(momentum);
+            case ADD -> entity.addDeltaMovement(momentum);
             case SET -> entity.setDeltaMovement(momentum);
         }
         entity.hurtMarked = true;
