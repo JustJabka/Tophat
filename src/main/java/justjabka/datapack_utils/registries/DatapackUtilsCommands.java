@@ -27,6 +27,7 @@ public class DatapackUtilsCommands {
             dispatcher.register(AirCommand.register());
             dispatcher.register(FoodCommand.register());
             dispatcher.register(ProvokeCommand.register());
+            dispatcher.register(FindBlockCommand.register(registryAccess));
         });
     }
 
