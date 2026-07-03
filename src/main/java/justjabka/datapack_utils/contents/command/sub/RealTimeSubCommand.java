@@ -1,4 +1,4 @@
-package justjabka.datapack_utils.contents.command;
+package justjabka.datapack_utils.contents.command.sub;
 
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import net.minecraft.commands.CommandSourceStack;
@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
-public class TimeQueryRealTimeCommand {
+public class RealTimeSubCommand {
     private static final DateTimeFormatter TIME_FORMAT_MESSAGE = DateTimeFormatter.ofPattern("HH:mm", Locale.ROOT);
     private static final DateTimeFormatter TIME_FORMAT_RETURN = DateTimeFormatter.ofPattern("HHmm", Locale.ROOT);
 

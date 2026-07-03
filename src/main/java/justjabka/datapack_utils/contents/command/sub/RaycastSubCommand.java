@@ -1,4 +1,4 @@
-package justjabka.datapack_utils.contents.command;
+package justjabka.datapack_utils.contents.command.sub;
 
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
@@ -16,7 +16,7 @@ import org.jspecify.annotations.NonNull;
 import java.util.Collections;
 import java.util.List;
 
-public class ExecuteRaycastCommand {
+public class RaycastSubCommand {
     public static LiteralCommandNode<CommandSourceStack> register(LiteralCommandNode<CommandSourceStack> vanillaExecute) {
         return Commands.literal("raycast")
                 .then(Commands.argument("range", DoubleArgumentType.doubleArg(0, 128))
