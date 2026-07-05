@@ -1,27 +1,27 @@
 {
 	"schemaVersion": 1,
-	"id": "just_utils",
+	"id": "tophat",
 	"version": "${version}",
-	"name": "Just Utils",
+	"name": "Tophat",
 	"description": "Adds various utilities for datapacks, such as /gui, /motion, player data, and more",
 	"authors": [
 		"JustJabka"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/just-utils/",
-		"sources": "https://github.com/JustJabka/Just-Utils/",
-		"issues": "https://github.com/JustJabka/Just-Utils/issues"
+		"homepage": "https://modrinth.com/mod/top-hat/",
+		"sources": "https://github.com/JustJabka/Tophat/",
+		"issues": "https://github.com/JustJabka/Tophat/issues"
 	},
 	"license": "MIT",
-	"icon": "assets/just_utils/icon.png",
+	"icon": "assets/tophat/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"justjabka.just_utils.JustUtils"
+			"justjabka.tophat.Tophat"
 		]
 	},
 	"mixins": [
-		"just_utils.mixins.json"
+		"tophat.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",

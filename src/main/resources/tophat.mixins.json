@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "justjabka.tophat.mixins",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AbstractContainerMenuMixin",
+    "EntityDataAccessorMixin",
+    "PanicGoalMixin",
+    "ServerPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
