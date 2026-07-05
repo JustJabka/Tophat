@@ -14,7 +14,7 @@
 	},
 	"license": "MIT",
 	"icon": "assets/just_utils/icon.png",
-	"environment": "server",
+	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"justjabka.just_utils.JustUtils"
